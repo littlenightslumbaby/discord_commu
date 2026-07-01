@@ -28,12 +28,11 @@ body {
   transform: scale(1.2);
   z-index: -3;
 }
-
 .overlay {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at top, rgba(0,255,255,0.08), black 70%);
+  background: radial-gradient(circle at top, rgba(255,77,184,0.12), black 70%);
   z-index: -2;
 }
 
@@ -57,12 +56,12 @@ nav {
 .logo {
   font-weight: 800;
   letter-spacing: 2px;
-  color: #00f7ff;
+  color: #ff4db8;
 }
 
 .btn {
   padding: 10px 18px;
-  background: linear-gradient(90deg,#00f7ff,#7c3aed);
+  background: linear-gradient(90deg,#ff4db8,#ff80d5);
   border-radius: 10px;
   text-decoration: none;
   color: white;
@@ -100,10 +99,9 @@ nav {
 }
 
 .tab.active {
-  background: rgba(0,247,255,0.2);
-  border: 1px solid #00f7ff;
+  background: rgba(255,77,184,0.2);
+  border: 1px solid #ff4db8;
 }
-
 /* CARDS */
 .container {
   display: grid;
@@ -120,12 +118,10 @@ nav {
   backdrop-filter: blur(10px);
   transition: 0.3s;
 }
-
 .card:hover {
   transform: translateY(-8px);
-  border-color: #00f7ff;
+  border-color: #ff4db8;
 }
-
 .copy {
   margin-top: 10px;
   padding: 8px 12px;
@@ -159,39 +155,43 @@ nav {
   <p>18+ • Clup</p>
 </div>
 <div class="container" id="servers">
+<div class="card">
+  <h3>ดิสเจ้าเซน</h3>
+  <p>เน้นเเจกฟรี • สายโปรโมท • สายฟรี</p>
+  <button class="copy" onclick="joinServer('https://discord.gg/xCyuUCrB9K')">
+    เข้าร่วมเซิร์ฟเวอร์
+  </button>
+</div>
 
-  <div class="card" data="0">
-    <h3>ดิสเจ้าเซน</h3>
-    <p>เน้นเเจกฟรี • สายโปรโมท • สายฟรี</p>
-    <button class="copy" onclick="copy('https://discord.gg/xCyuUCrB9K')">ก็อบลิงก์</button>
-  </div>
+<div class="card">
+  <h3>ดิสเจ้าไนท์ V1</h3>
+  <p>ของเเจก • โคตรเยอะ • คลิปเเรร์</p>
+  <button class="copy" onclick="joinServer('https://discord.gg/CD5qGaDYV2')">
+    เข้าร่วมเซิร์ฟเวอร์
+  </button>
+</div>
 
-  <div class="card" data="1">
-    <h3>ดิสเจ้าไนท์ V1</h3>
-    <p>ของเเจก • โคตรเยอะ • คลิปเเรร์</p>
-    <button class="copy" onclick="copy('https://discord.gg/CD5qGaDYV2')">ก็อบลิงก์</button>
-  </div>
+<div class="card">
+  <h3>ดิสเจ้าไนท์ V2</h3>
+  <p>ลงคลิปเยอะมาก • Private • Premium</p>
+  <button class="copy" onclick="joinServer('https://discord.gg/quQFYwwPH6')">
+    เข้าร่วมเซิร์ฟเวอร์
+  </button>
+</div>
 
-  <div class="card" data="2">
-    <h3>ดิสเจ้าไนท์ V2</h3>
-    <p>ลงคลิปเยอะมาก • Private • Premium</p>
-    <button class="copy" onclick="copy('https://discord.gg/quQFYwwPH6')">ก็อบลิงก์</button>
-  </div>
-
-  <div class="card" data="3">
-    <h3>What if Official — 18+ (ดิสใหม่)</h3>
-    <p>สายฟรี • Private • คัดเเต่เกรดพรีเมี่ยม</p>
-    <button class="copy" onclick="copy('https://discord.gg/SYV8qCx3xm')">ก็อบลิงก์</button>
-  </div>
+<div class="card">
+  <h3>What if Official — 18+ (ดิสใหม่)</h3>
+  <p>สายฟรี • Private • คัดเเต่เกรดพรีเมี่ยม</p>
+  <button class="copy" onclick="joinServer('https://discord.gg/SYV8qCx3xm')">
+    เข้าร่วมเซิร์ฟเวอร์
+  </button>
+</div>
 </div>
 
 <script>
-// COPY
-function copy(text){
-  navigator.clipboard.writeText(text);
-  alert("ก็อบสําเร็จเเล้ว!");
+function joinServer(url){
+  window.open(url, "_blank");
 }
-
 // TAB FILTER
 function show(i){
   let cards = document.querySelectorAll(".card");
@@ -229,7 +229,7 @@ function animate(){
   for(let p of particles){
     ctx.beginPath();
     ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle="rgba(0,247,255,0.5)";
+    ctx.fillStyle="rgba(255,77,184,0.5)";
     ctx.fill();
 
     p.x += p.dx;
