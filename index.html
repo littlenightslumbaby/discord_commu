@@ -22,6 +22,43 @@
 <link rel="canonical" href="https://littlenightslumbaby.github.io/discord_commu/">
 <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
+/* ===== Loading Screen ===== */
+#loader{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:99999;
+    transition:opacity 1.2s ease;
+}
+
+#loader.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+.loader-text{
+    color:#fff;
+    font-size:32px;
+    font-weight:600;
+    letter-spacing:4px;
+    text-shadow:0 0 10px #ff4db8;
+    animation:pulse 1.2s infinite alternate;
+}
+
+@keyframes pulse{
+    from{
+        opacity:.4;
+        transform:scale(1);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.08);
+    }
+}
 * {
   margin: 0;
   padding: 0;
@@ -60,29 +97,53 @@ canvas {
   z-index: -1;
 }
 
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.03);
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 35px;
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(18px);
+  background:rgba(15,15,15,.45);
+  border-bottom:1px solid rgba(255,77,184,.25);
+  z-index:999;
 }
 
-.logo {
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #ff4db8;
+.logo{
+  font-size:28px;
+  font-weight:700;
+  color:#fff;
+  letter-spacing:1px;
+  text-shadow:0 0 10px #ff4db8,
+              0 0 20px #ff4db8;
+  animation:glow 2s ease-in-out infinite alternate;
 }
 
-.btn {
-  padding: 10px 18px;
-  background: linear-gradient(90deg,#ff4db8,#ff80d5);
-  border-radius: 10px;
-  text-decoration: none;
-  color: white;
+.btn{
+  padding:12px 24px;
+  text-decoration:none;
+  color:#fff;
+  border-radius:50px;
+  background:linear-gradient(135deg,#ff4db8,#ff80d5);
+  box-shadow:0 0 15px rgba(255,77,184,.45);
+  transition:.3s;
 }
 
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 25px rgba(255,77,184,.8);
+}
+
+@keyframes glow{
+  from{
+    text-shadow:0 0 8px #ff4db8;
+  }
+  to{
+    text-shadow:0 0 20px #ff4db8,
+                0 0 35px #ff80d5;
+  }
+}
 /* HERO */
 .hero {
   text-align: center;
@@ -147,11 +208,23 @@ nav {
   border-radius: 8px;
   cursor: pointer;
 }
+.avatar{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto 15px;
+  border:3px solid #ff4db8;
+  box-shadow:0 0 15px rgba(255,77,184,.4);
+}
 </style>
 </head>
 
 <body>
-
+<div id="loader">
+    <div class="loader-text">Loading...</div>
+</div>
 <!-- 🎥 BACKGROUND VIDEO -->
 <video autoplay muted loop playsinline class="video-bg">
     <source src="video.mp4" type="video/mp4">
@@ -165,12 +238,9 @@ nav {
   <a class="btn" href="#servers">เข้าดิส</a>
 </nav>
 
-<div class="hero">
-  <h1>รวมดิส 18+ ที่มาเเรง ณ ตอนนี้ !</h1>
-  <p>18+ • Clup</p>
-</div>
 <div class="container" id="servers">
 <div class="card">
+  <img class="avatar" src="https://cdn2.hentaigifz.com/116462/pretty-elf-gets-fucked.gif" alt="Server">
   <h3>ดิสเจ้าเซน</h3>
   <p>เน้นเเจกฟรี • สายโปรโมท • สายฟรี</p>
   <button class="copy" onclick="joinServer('https://discord.gg/xCyuUCrB9K')">
@@ -179,6 +249,7 @@ nav {
 </div>
 
 <div class="card">
+  <img class="avatar" src="https://cdn2.hentaigifz.com/116068/boobs-bra.gif" alt="Server">
   <h3>ดิสเจ้าไนท์ V1</h3>
   <p>ของเเจก • โคตรเยอะ • คลิปเเรร์</p>
   <button class="copy" onclick="joinServer('https://discord.gg/yPN4f6Xkgs')">
@@ -187,6 +258,7 @@ nav {
 </div>
 
 <div class="card">
+  <img class="avatar" src="https://cdn2.hentaigifz.com/107904/eroge-h-mo-game-mo-kaihatsu-zanmai.gif" alt="Server">
   <h3>ดิสเจ้าไนท์ V2</h3>
   <p>ลงคลิปเยอะมาก • Private • Premium</p>
   <button class="copy" onclick="joinServer('https://discord.gg/quQFYwwPH6')">
@@ -195,6 +267,7 @@ nav {
 </div>
 
 <div class="card">
+  <img class="avatar" src="https://cdn2.hentaigifz.com/115816/anime.gif" alt="Server">
   <h3>What if Official — 18+ (ดิสใหม่)</h3>
   <p>สายฟรี • Private • คัดเเต่เกรดพรีเมี่ยม</p>
   <button class="copy" onclick="joinServer('https://discord.gg/SYV8qCx3xm')">
@@ -203,6 +276,7 @@ nav {
 </div>
 
 <div class="card">
+  <img class="avatar" src="https://cdn2.hentaigifz.com/115562/kyonyuu-fantasy-5.gif" alt="Server">
   <h3>Pv — 18+ (ดิสใหม่)</h3>
   <p>นัดตอกฟรี • Private • คัดเเต่เกรดหลุดๆวงใน</p>
   <button class="copy" onclick="joinServer('https://discord.gg/UemtgycAza')">
@@ -211,6 +285,7 @@ nav {
 </div>
   
 <div class="card">
+  <img class="avatar" src="https://cdn2.hentaigifz.com/115466/big-tits-are-so-fun.gif" alt="Server">
   <h3>XO — (เเหล่งรวมคลิป 18+ , หลุดวงใน , เด็ก , ข่มขื่น) (ดิสใหม่)</h3>
   <p>คอลฟรี • Private • คัดเเต่เกรดหายากๆสัส</p>
   <button class="copy" onclick="joinServer('https://discord.gg/BRysh6JQAh')">
@@ -219,6 +294,7 @@ nav {
 </div>
 
 <div class="card">
+  <img class="avatar" src="https://cdn2.hentaigifz.com/106322/hentai.gif" alt="Server">
   <h3>หนูจะตริ้วว — (เเหล่งรวมคลิป 18+ , หลุดวงใน , เด็ก , ข่มขื่น) (ดิสใหม่)</h3>
   <p>นัดอม • ส่วนตัว • เน้นสายไม่มีตังค์</p>
   <button class="copy" onclick="joinServer('https://discord.gg/uQDGePcXZN')">
@@ -227,12 +303,21 @@ nav {
 </div>
 
 <div class="card">
+  <img class="avatar" src="https://cdn2.hentaigifz.com/63918/hentai.gif" alt="Server">
   <h3>ฮาเลลูยาา — (เเหล่งรวมคลิป 18+ , หลุดวงใน , เด็ก , ข่มขื่น) (ดิสใหม่)</h3>
   <p>นักชักเเตกคาปาก• ส่วนตัว • เน้นของจริง</p>
   <button class="copy" onclick="joinServer('https://discord.gg/zKEn8ykzyw')">
     เข้าร่วมเซิร์ฟเวอร์
   </button>
 </div>
+
+<script>
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.getElementById("loader").classList.add("hide");
+    }, 1000); // แสดง Loading อย่างน้อย 1 วินาที
+});
+</script>
 </div>
 
 <script>
@@ -290,6 +375,21 @@ function animate(){
 }
 animate();
 </script>
+<audio id="bgm" loop>
+  <source src="night.mp3" type="audio/mpeg">
+</audio>
 
+<script>
+const audio = document.getElementById("bgm");
+
+document.addEventListener("click", () => {
+  audio.play();
+}, { once: true });
+
+document.addEventListener("touchstart", () => {
+  audio.play();
+}, { once: true });
+</script>
 </body>
 </html>
+
