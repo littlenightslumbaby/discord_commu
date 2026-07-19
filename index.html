@@ -22,6 +22,72 @@
 <link rel="canonical" href="https://littlenightslumbaby.github.io/discord_commu/">
 <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
+.card h3,
+.card p,
+.card .copy{
+    animation: floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-4px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.card h3{
+    animation-delay: 0s;
+}
+
+.card p{
+    animation-delay: .2s;
+}
+
+.card .copy{
+    animation-delay: .4s;
+}
+.card{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.card.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+.card{
+  position: relative;
+}
+
+.badge{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg,#ff4db8,#ff80d5);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(255,77,184,.5);
+  animation: badgePulse 1.5s infinite;
+}
+
+@keyframes badgePulse{
+  0%,100%{
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(255,77,184,.5);
+  }
+  50%{
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(255,77,184,.9);
+  }
+}
 /* ===== Loading Screen ===== */
 #loader{
     position:fixed;
@@ -240,6 +306,7 @@ nav{
 
 <div class="container" id="servers">
 <div class="card">
+  <div class="badge">ยอดนิยม</div>
   <img class="avatar" src="https://cdn2.hentaigifz.com/116462/pretty-elf-gets-fucked.gif" alt="Server">
   <h3>ดิสเจ้าเซน</h3>
   <p>เน้นเเจกฟรี • สายโปรโมท • สายฟรี</p>
@@ -249,6 +316,7 @@ nav{
 </div>
 
 <div class="card">
+  <div class="badge">มาแรง</div>
   <img class="avatar" src="https://cdn2.hentaigifz.com/116068/boobs-bra.gif" alt="Server">
   <h3>ดิสเจ้าไนท์ V1</h3>
   <p>ของเเจก • โคตรเยอะ • คลิปเเรร์</p>
@@ -258,6 +326,7 @@ nav{
 </div>
 
 <div class="card">
+  <div class="badge">กําลังไลฟ์สด</div>
   <img class="avatar" src="https://cdn2.hentaigifz.com/107904/eroge-h-mo-game-mo-kaihatsu-zanmai.gif" alt="Server">
   <h3>ดิสเจ้าไนท์ V2</h3>
   <p>ลงคลิปเยอะมาก • Private • Premium</p>
@@ -267,6 +336,7 @@ nav{
 </div>
 
 <div class="card">
+  <div class="badge">ดิสใหม่</div>
   <img class="avatar" src="https://cdn2.hentaigifz.com/115816/anime.gif" alt="Server">
   <h3>What if Official — 18+ (ดิสใหม่)</h3>
   <p>สายฟรี • Private • คัดเเต่เกรดพรีเมี่ยม</p>
@@ -276,6 +346,7 @@ nav{
 </div>
 
 <div class="card">
+  <div class="badge">หลุดวงใน</div>
   <img class="avatar" src="https://cdn2.hentaigifz.com/115562/kyonyuu-fantasy-5.gif" alt="Server">
   <h3>Pv — 18+ (ดิสใหม่)</h3>
   <p>นัดตอกฟรี • Private • คัดเเต่เกรดหลุดๆวงใน</p>
@@ -285,6 +356,7 @@ nav{
 </div>
   
 <div class="card">
+  <div class="badge">สายคอล</div>
   <img class="avatar" src="https://cdn2.hentaigifz.com/115466/big-tits-are-so-fun.gif" alt="Server">
   <h3>XO — (เเหล่งรวมคลิป 18+ , หลุดวงใน , เด็ก , ข่มขื่น) (ดิสใหม่)</h3>
   <p>คอลฟรี • Private • คัดเเต่เกรดหายากๆสัส</p>
@@ -294,6 +366,7 @@ nav{
 </div>
 
 <div class="card">
+  <div class="badge">สายนัด</div>
   <img class="avatar" src="https://cdn2.hentaigifz.com/106322/hentai.gif" alt="Server">
   <h3>หนูจะตริ้วว — (เเหล่งรวมคลิป 18+ , หลุดวงใน , เด็ก , ข่มขื่น) (ดิสใหม่)</h3>
   <p>นัดอม • ส่วนตัว • เน้นสายไม่มีตังค์</p>
@@ -303,6 +376,7 @@ nav{
 </div>
 
 <div class="card">
+  <div class="badge">สายอม</div>
   <img class="avatar" src="https://cdn2.hentaigifz.com/63918/hentai.gif" alt="Server">
   <h3>ฮาเลลูยาา — (เเหล่งรวมคลิป 18+ , หลุดวงใน , เด็ก , ข่มขื่น) (ดิสใหม่)</h3>
   <p>นักชักเเตกคาปาก• ส่วนตัว • เน้นของจริง</p>
@@ -310,7 +384,27 @@ nav{
     เข้าร่วมเซิร์ฟเวอร์
   </button>
 </div>
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const index = [...document.querySelectorAll(".card")].indexOf(entry.target);
 
+      setTimeout(() => {
+        entry.target.classList.add("show");
+      }, index * 150); // แต่ละการ์ดห่างกัน 150ms
+
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+document.querySelectorAll(".card").forEach(card => {
+  observer.observe(card);
+});
+</script>
 <script>
 window.addEventListener("load", () => {
     setTimeout(() => {
@@ -359,10 +453,19 @@ function animate(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
   for(let p of particles){
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.scale(p.r * 0.15, p.r * 0.15);
+
     ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle="rgba(255,77,184,0.5)";
+    ctx.moveTo(0, -10);
+    ctx.bezierCurveTo(12, -25, 35, -10, 0, 20);
+    ctx.bezierCurveTo(-35, -10, -12, -25, 0, -10);
+  
+    ctx.fillStyle = "rgba(255,77,184,0.25)";
     ctx.fill();
+ 
+    ctx.restore();
 
     p.x += p.dx;
     p.y += p.dy;
@@ -392,4 +495,3 @@ document.addEventListener("touchstart", () => {
 </script>
 </body>
 </html>
-
